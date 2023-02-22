@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="view_po_line_discount" model="ir.ui.view">
+            <field name="name">po.line.discount.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                      <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                           <field name="discount" widget="percentage"/>
+                      </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
